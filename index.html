@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#353333" />
+	<title>Photos mariage Paul & Marjolaine</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./app.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+	<!-- Libraries -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+	<!-- app -->
+</head>
+<body>
+	<div id="app">
+		<div class="header">Paul & Marjolaine</div>
+		<div class="content">
+			<div @click="openShare" class="share">
+				Vous pouvez partager vos photos du mariage en cliquant sur le bouton partager:
+				<div class="share-button">Partager</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./app.js"></script>
+</html>

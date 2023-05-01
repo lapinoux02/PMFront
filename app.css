@@ -1,0 +1,52 @@
+:root {
+	--header-height: 150px;
+}
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    background: #c2d7c6;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: var(--header-height);
+	box-shadow: 2px 2px 3px grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 60px;
+	font-family: 'Dancing Script', cursive;
+	background: #c2d7c6;
+}
+
+.content {
+    margin-top: var(--header-height);
+    padding-top: 15px;
+    font-size: 25px;
+    height: calc(100vh - var(--header-height));
+}
+
+.share {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.share-button {
+	font-size: 1.5em;
+	border: 1px solid black;
+	padding: 5px 15px;
+	cursor: pointer;
+}
