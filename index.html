@@ -11,6 +11,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 	<!-- Libraries -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
@@ -23,6 +24,14 @@
 			<div @click="openShare" class="share">
 				Vous pouvez partager vos photos du mariage en cliquant sur le bouton partager:
 				<div class="share-button">Partager</div>
+			</div>
+			<div v-if="files.length && files.some(f => !f.status)">Veuillez ne pas quitter la page tant que les fichiers ne sont pas tous uploadés ({{uploads}} / {{files.length}})</div>
+			<div v-else-if="files.length">Téléchargement terminé, merci <span class="material-symbols-outlined" style="color: red">favorite</span></div>
+			<div class="file-list">
+				<div v-for="file in files" class="file">
+					<span>{{file.name}}</span>
+					<span class="material-symbols-outlined" :style="{color: color(file.status)}">{{icon(file.status)}}</span>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -50,3 +50,13 @@ body, html {
 	padding: 5px 15px;
 	cursor: pointer;
 }
+
+.file-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.file-list .file {
+	display: flex;
+	flex-direction: row;
+}
