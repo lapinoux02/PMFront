@@ -18,10 +18,10 @@
 	height: 8px;
 }
 *::-webkit-scrollbar-thumb {
-    background: lightgrey;
+    background: var(--color1);
 }
 *::-webkit-scrollbar-track {
-    background: white;
+    background: #ffffff00;
 }
 
 h1 {
@@ -42,6 +42,8 @@ h2 {
 	--color1: #dd7559;
 	--color2: #fad6a5;
 	--color3: #155646;
+	--color4: #93a287;
+	--color5: #d79352;
 	--info-title-height: 44px;
 }
 
@@ -159,13 +161,13 @@ body, html {
 	list-style: none;
 	display: flex;
 	align-items: center;
-	gap: 3em;
+	gap: 1em;
 	margin-top: 1em;
 	margin-left: 3em;
 }
 #program ul li img {
-	width: 100px;
-	max-height: 100px;
+	width: 120px;
+	height: 120px;
 	object-fit: contain;
 }
 #program ul li div {
@@ -184,4 +186,42 @@ body, html {
 
 #places li .tab {
 	margin-left: 3rem;
+	font-size: 1.2rem;
+}
+
+#places .places-title {
+	font-weight: bold;
+	font-size: 1.2rem;
+    display: flex;
+}
+
+#places .places-title img {
+	width: 1.2rem;
+	max-height: 1.2rem;
+	object-fit: contain;
+	margin-right: 1rem;
+}
+
+/* dresscode */
+#dresscode .dresscode-colors {
+    display: flex;
+    justify-content: center;
+    background: white;
+    padding: 0 1rem;
+    margin: 0 3rem;
+    border-radius: 100px;
+	max-width: calc(100% - 6rem);
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+
+#dresscode .dresscode-color {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#dresscode .color-name {
+	font-family: honey;
+	font-size: 1.5rem;
 }

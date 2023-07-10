@@ -1,20 +1,72 @@
 const AXIOS = axios.create({baseURL: 'http://pinkcactus.freeboxos.fr/pmback'})
 
+Vue.component('tache', {
+	template: `<svg width="4.5rem" height="4.5rem" viewBox="0 0 15 15">
+		<g>
+			<path
+				:fill="color"
+				d="m 12.14,12.15 c -1.3229,1.559786 -5.20442,2.505837 -7.09667,1.729685 -1.89224,-0.776152 -3.99144,-4.175357 -3.83801,-6.214831 0.15343,-2.039473 2.73757,-5.086349 4.72464,-5.570661 1.98706,-0.484311 5.68336,1.031821 6.75801,2.771973 1.07464,1.740153 0.77493,5.724049 -0.54797,7.283834 z" />
+		</g>
+	</svg>`,
+	props: ['color']
+})
+
 Vue.component('home', {
-	template: `<div>home</div>`
+	template: `<div id="home">
+		<h1 class="info-title">Bienvenue !</h1>
+		<div class="info-content" style="margin: 0 4rem; text-align: center;"><p style="margin-top: 0">Nous avons la joie de vous convier à notre mariage convivial
+		aux couleures automnales dans une ambiance bohème.</p><p>
+		Déplacements à pieds, détente dans le jardin et petit restaurant agrémenteront la journée.</p>
+		<p>Vous trouverez ici toutes les informations concernant le mariage. N'hésitez pas à partager vos photos du mariage dans l'onglet photos.</p></div>
+	</div>`
+})
+
+Vue.component('dresscode', {
+	template: `<div id="dresscode">
+		<h1 class="info-title">Dress-code</h1>
+		<div class="info-content">
+			<div style="padding: 0 1rem; margin-bottom: 1rem;">Les mariés comptent sur vous pour trouver une tenue bohème dans les tons suivants :</div>
+			<div class="dresscode-colors">
+				<div v-for="color in colors" class="dresscode-color">
+					<tache :color="color.color"></tache>
+					<div class="color-name">{{color.name}}</div>
+				</div>
+			</div>
+		</div>
+	</div>`,
+	data() {
+		return {
+			colors: [{
+				color: 'var(--color1)',
+				name: 'Terracotta'
+			}, {
+				color: 'var(--color5)',
+				name: 'Camel'
+			}, {
+				color: 'var(--color2)',
+				name: 'Champagne'
+			}, {
+				color: 'var(--color4)',
+				name: 'Sauge'
+			}, {
+				color: 'var(--color3)',
+				name: 'Eucalyptus'
+		}]
+		}
+	}
 })
 
 Vue.component('places', {
 	template: `<div id="places">
 		<h1 class="info-title">Lieux</h1>
 		<div class="info-content">
-			<ul>
-				<li style="font-size: 1.3rem"><span style="font-weight: bold">Chez nous</span><span class="tab">12 rue de la tour, 31380 Gragnague</span></li>
-				<li style="font-size: 1.3rem"><span style="font-weight: bold">Mairie de Gragnague</span><span class="tab">15 Pl. Bellegarde, 31380 Gragnague</span></li>
-				<li style="font-size: 1.3rem"><span style="font-weight: bold">Église de Gragnague</span><span class="tab">19 Pl. Bellegarde, 31380 Gragnague</span></li>
-				<li style="font-size: 1.3rem"><span style="font-weight: bold">Restaurant "le petit café"</span><span class="tab">14 Av. du champ de Foire, 31380 Gragnague</span></li>
-			</ul>
 			<img src="assets/plan gragnague.png" width="100%">
+			<ul>
+				<li><span class="places-title"><img src="assets/home.png">Chez nous</span><span class="tab">12 rue de la tour, 31380 Gragnague</span></li>
+				<li><span class="places-title"><img src="assets/university.png">Mairie de Gragnague</span><span class="tab">15 Pl. Bellegarde, 31380 Gragnague</span></li>
+				<li><span class="places-title"><img src="assets/big-church.png">Église de Gragnague</span><span class="tab">19 Pl. Bellegarde, 31380 Gragnague</span></li>
+				<li><span class="places-title"><img src="assets/restaurant.png">Restaurant "le petit café"</span><span class="tab">14 Av. du champ de Foire, 31380 Gragnague</span></li>
+			</ul>
 		</div>
 	</div>`
 })
@@ -24,7 +76,7 @@ Vue.component('program', {
 		<h1 class="info-title">Programme</h1>
 		<ul class="info-content">
 			<li>
-				<img src="assets/mairie.png" height="100px">
+				<img src="assets/mairie.png">
 				<div>
 					<h2>Cérémonie civile</h2>
 					<div>15h30</div>
@@ -32,13 +84,13 @@ Vue.component('program', {
 				</div>
 			</li>
 			<li>
-				<img src="assets/photos.png" height="100px">
+				<img src="assets/photos.png">
 				<div>
 					<h2>Photos</h2>
 				</div>
 			</li>
 			<li>
-				<img src="assets/église.png" height="100px">
+				<img src="assets/église.png">
 				<div>
 					<h2>Cérémonie religieuse</h2>
 					<div>16h30</div>
@@ -46,14 +98,14 @@ Vue.component('program', {
 				</div>
 			</li>
 			<li>
-				<img src="assets/apéro.png" height="100px">
+				<img src="assets/apéro.png">
 				<div>
 					<h2>Vin d'honneur</h2>
 					<div>Chez nous</div>
 				</div>
 			</li>
 			<li>
-				<img src="assets/couverts.png" height="100px">
+				<img src="assets/couverts.png">
 				<div>
 					<h2>Dinner</h2>
 					<div>20h30</div>
@@ -61,7 +113,7 @@ Vue.component('program', {
 				</div>
 			</li>
 			<li>
-				<img src="assets/musique.png" height="100px">
+				<img src="assets/musique.png">
 				<div>
 					<h2>Soirée</h2>
 					<div>Chez nous</div>
