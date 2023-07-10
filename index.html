@@ -19,20 +19,22 @@
 </head>
 <body>
 	<div id="app">
-		<div class="header">Paul & Marjolaine</div>
+		<div class="header">
+			<div @click="route = 'home'">Home</div>
+			<div @click="route = 'program'">Programme</div>
+			<div @click="route = 'places'">Lieux</div>
+			<div @click="route = 'dresscode'">Dress-code</div>
+			<div @click="route = 'rest'">Hébergement</div>
+			<div @click="route = 'photos'">Photos</div>
+		</div>
 		<div class="content">
-			<div @click="openShare" class="share">
-				Vous pouvez partager vos photos du mariage en cliquant sur le bouton partager:
-				<div class="share-button">Partager</div>
+			<div class="intro">
+				<h1>Paul & Marjolaine</h1>
+				<img src="assets/couple.png" width="250px">
+				<div style="margin-top: 1em;">23 Septembre 2023</div>
+				<div style="margin-top: 0.5em;">Gragnague</div>
 			</div>
-			<div v-if="files.length && files.some(f => !f.status)">Veuillez ne pas quitter la page tant que les fichiers ne sont pas tous uploadés ({{uploads}} / {{files.length}})</div>
-			<div v-else-if="files.length">Téléchargement terminé, merci <span class="material-symbols-outlined" style="color: red">favorite</span></div>
-			<div class="file-list">
-				<div v-for="file in files" class="file">
-					<span>{{file.name}}</span>
-					<span class="material-symbols-outlined" :style="{color: color(file.status)}">{{icon(file.status)}}</span>
-				</div>
-			</div>
+			<component :is="route" class="info"></component>
 		</div>
 	</div>
 </body>

@@ -1,6 +1,50 @@
+@font-face {
+	font-family: honey;
+	src: url("assets/Honey\ Florist\ -\ Personal\ Use.otf");
+}
+
+@font-face {
+	font-family: mrs;
+	src: url("assets/MrsEavesItalic_Italic.ttf");
+}
+
+* {
+	font-family: mrs;
+	font-size: 1.5rem;
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+	height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+    background: lightgrey;
+}
+*::-webkit-scrollbar-track {
+    background: white;
+}
+
+h1 {
+	font-family: honey;
+	font-size: 2rem;
+	font-weight: 100;
+}
+
+h2 {
+	font-family: honey;
+	font-size: 1.5rem;
+	font-weight: 100;
+	margin: 0;
+}
+
 :root {
 	--header-height: 150px;
+	--color1: #dd7559;
+	--color2: #fad6a5;
+	--color3: #155646;
+	--info-title-height: 44px;
 }
+
 body, html {
 	margin: 0;
 	padding: 0;
@@ -12,28 +56,71 @@ body, html {
     justify-content: center;
     align-items: center;
     overflow-y: auto;
-    background: #c2d7c6;
+    background: white;
 }
 
 .header {
 	position: fixed;
-	top: 0;
-	width: 100vw;
-	height: var(--header-height);
+	top: 40px;
+	width: calc(100vw - 140px);
+	height: var(--header-height - 70px);
 	box-shadow: 2px 2px 3px grey;
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 	align-items: center;
 	font-size: 60px;
-	font-family: 'Dancing Script', cursive;
-	background: #c2d7c6;
+	font-family: honey;
+	background: var(--color1);
+}
+
+.header div {
+	margin: 0 30px;
+	cursor: pointer;
+	color: var(--color2);
 }
 
 .content {
     margin-top: var(--header-height);
     padding-top: 15px;
     font-size: 25px;
-    height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height) - 15px);
+    width: 100%;
+    max-width: 1300px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+}
+
+.intro {
+	width: 350px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.info {
+	width: 750px;
+	background: var(--color2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-y: auto;
+	height: calc(100% - 20px);
+	border-radius: 20px;
+}
+
+.info-title {
+	height: var(--info-title-height);
+	color: var(--color1);
+}
+
+.info-content {
+	height: calc(100% - var(--info-title-height));
+	overflow: auto;
+}
+.info-content h2 {
+	color: var(--color3);
 }
 
 .share {
@@ -59,4 +146,42 @@ body, html {
 .file-list .file {
 	display: flex;
 	flex-direction: row;
+}
+
+
+/* Programme */
+#program ul {
+    width: 100%;
+	margin: 0;
+	padding: 0;
+}
+#program ul li {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 3em;
+	margin-top: 1em;
+	margin-left: 3em;
+}
+#program ul li img {
+	width: 100px;
+	max-height: 100px;
+	object-fit: contain;
+}
+#program ul li div {
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* lieux */
+#places li {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+#places li .tab {
+	margin-left: 3rem;
 }
