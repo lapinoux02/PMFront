@@ -1,4 +1,4 @@
-const AXIOS = axios.create({baseURL: 'http://pinkcactus.freeboxos.fr/pmback'})
+const AXIOS = axios.create({baseURL: 'https://pinkcactus.freeboxos.fr/pmback'})
 
 Vue.component('tache', {
 	template: `<svg width="4.5rem" height="4.5rem" viewBox="0 0 15 15">
