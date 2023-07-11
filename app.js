@@ -126,17 +126,17 @@ Vue.component('program', {
 Vue.component('photos', {
 	template: `<div id="photos">
 		<h1 class="info-title">Photos</h1>
-		<div class="info-content" style="padding: 0 3rem;">
+		<div class="info-content" style="padding: 0 3rem; display: flex; flex-direction: column; gap: 1rem;">
 			<div @click="openShare" class="share">
-				Vous pouvez partager vos photos du mariage en cliquant sur le bouton partager:
-				<div class="share-button">Partager</div>
+				<span>Vous pouvez nous partager vos photos du mariage en cliquant sur le bouton suivant :</span>
+				<span class="material-symbols-outlined share-button">add_a_photo</span>
 			</div>
-			<div v-if="files.length && files.some(f => !f.status)">Veuillez ne pas quitter la page tant que les fichiers ne sont pas tous uploadés ({{uploads}} / {{files.length}})</div>
-			<div v-else-if="files.length">Téléchargement terminé, merci <span class="material-symbols-outlined" style="color: red">favorite</span></div>
+			<div v-if="files.length && files.some(f => !f.status)" style="font-size: 1rem;">Upload en cours, ne quittez pas la page : {{uploads}} / {{files.length}}</div>
+			<div v-else-if="files.length" style="font-size: 1rem;">Upload terminé <span v-if=errors style="font-size: 1rem;">({{errors}} fichiers en erreur)</span>, merci <span class="material-symbols-outlined" style="color: red">favorite</span></div>
 			<div class="file-list">
 				<div v-for="file in files" class="file">
-					<span>{{file.name}}</span>
-					<span class="material-symbols-outlined" :style="{color: color(file.status)}">{{icon(file.status)}}</span>
+					<span style="font-size: 1rem;">{{file.name}}</span>
+					<span class="material-symbols-outlined" :style="{color: color(file.status), display: 'flex', fontSize: '1rem'}">{{icon(file.status)}}</span>
 				</div>
 			</div>
 		</div>
@@ -145,6 +145,11 @@ Vue.component('photos', {
 		return {
 			files: [],
 			uploads: 0
+		}
+	},
+	computed: {
+		errors() {
+			return this.files.filter(f => f.status === 2).length
 		}
 	},
 	methods: {
