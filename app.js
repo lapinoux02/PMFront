@@ -124,17 +124,20 @@ Vue.component('program', {
 })
 
 Vue.component('photos', {
-	template: `<div class="info">
-		<div @click="openShare" class="share">
-			Vous pouvez partager vos photos du mariage en cliquant sur le bouton partager:
-			<div class="share-button">Partager</div>
-		</div>
-		<div v-if="files.length && files.some(f => !f.status)">Veuillez ne pas quitter la page tant que les fichiers ne sont pas tous uploadés ({{uploads}} / {{files.length}})</div>
-		<div v-else-if="files.length">Téléchargement terminé, merci <span class="material-symbols-outlined" style="color: red">favorite</span></div>
-		<div class="file-list">
-			<div v-for="file in files" class="file">
-				<span>{{file.name}}</span>
-				<span class="material-symbols-outlined" :style="{color: color(file.status)}">{{icon(file.status)}}</span>
+	template: `<div id="photos">
+		<h1 class="info-title">Photos</h1>
+		<div class="info-content" style="padding: 0 3rem;">
+			<div @click="openShare" class="share">
+				Vous pouvez partager vos photos du mariage en cliquant sur le bouton partager:
+				<div class="share-button">Partager</div>
+			</div>
+			<div v-if="files.length && files.some(f => !f.status)">Veuillez ne pas quitter la page tant que les fichiers ne sont pas tous uploadés ({{uploads}} / {{files.length}})</div>
+			<div v-else-if="files.length">Téléchargement terminé, merci <span class="material-symbols-outlined" style="color: red">favorite</span></div>
+			<div class="file-list">
+				<div v-for="file in files" class="file">
+					<span>{{file.name}}</span>
+					<span class="material-symbols-outlined" :style="{color: color(file.status)}">{{icon(file.status)}}</span>
+				</div>
 			</div>
 		</div>
 	</div>`,
