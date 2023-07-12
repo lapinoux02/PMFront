@@ -68,7 +68,7 @@ body, html {
 .header {
 	position: fixed;
 	top: 40px;
-	padding: 0 150px;
+	padding: 0 100px;
 	box-shadow: 2px 2px 3px grey;
 	display: flex;
 	justify-content: center;
@@ -234,4 +234,48 @@ body, html {
 #dresscode .color-name {
 	font-family: honey;
 	font-size: 1.5rem;
+}
+
+.rest-list {
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: flex-start;
+	justify-content: center;
+	padding-bottom: 3rem;
+}
+.rest-square {
+	width: 300px;
+	height: 300px;
+	border-radius: 1rem;
+	background: white;
+}
+.rest-square h2 {
+	margin-top: 0.5rem;
+}
+.rest-square ul {padding: 0;}
+.rest-square li {
+	list-style: none;
+	font-size: 1rem;
+	font-weight: bold;
+	color: #3a3a3a;
+}
+.rest-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+.rest-address {
+	font-size: 1rem;
+	color: var(--color4);
+}
+.rest-trivia {
+	font-size: 1rem
+}
+
+.days-left {
+    margin-top: 0.5em;
+    font-weight: bold;
+    color: var(--color1);
 }

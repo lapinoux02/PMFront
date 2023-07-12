@@ -26,6 +26,7 @@
 			<div @click="route = 'dresscode'">Dress-code</div>
 			<div @click="route = 'rest'">Hébergement</div>
 			<div @click="route = 'photos'">Photos</div>
+			<div @click="route = 'galery'">Galerie</div>
 		</div>
 		<div class="content">
 			<div class="intro">
@@ -33,6 +34,9 @@
 				<img src="assets/couple.png" width="250px">
 				<div style="margin-top: 1em;">23 Septembre 2023</div>
 				<div style="margin-top: 0.5em;">Gragnague</div>
+				<div class="days-left" v-if="daysLeft && daysLeft > 0">J - {{daysLeft}}</div>
+				<div class="days-left" v-else-if="!daysLeft">C'est le grand jour !</div>
+				<div class="days-left" v-else>Vive les mariés !</div>
 			</div>
 			<component :is="route" class="info"></component>
 		</div>

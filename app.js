@@ -21,6 +21,72 @@ Vue.component('home', {
 	</div>`
 })
 
+Vue.component('galery', {
+	template: `<div id="galery">
+		<h1 class="info-title">Galerie</h1>
+		<div class="info-content" style="margin: 0 4rem; text-align: center;"><p style="margin-top: 0">
+			<div>Une fois récupérées, vous pourrez trouver ici toutes les photos du mariage.</div>
+			<img src="assets/bouquet.png">
+		</div>
+	</div>`
+})
+
+Vue.component('rest', {
+	template: `<div id="rest">
+		<h1 class="info-title">Hébergement</h1>
+		<div class="info-content">
+			<div class="rest-list">
+				<div class="rest-square">
+					<h2>Chez nous</h2>
+					<ul>
+						<li>Hafsa, Romain, Arthur</li>
+						<li>Eugénie, Bastien</li>
+						<li>Morgan</li>
+						<li>Sébastien</li>
+					</ul>
+					<div class="rest-info">
+						<div class="rest-address">12 rue de la tour<br>31380 Gragnague</div>
+						<div class="rest-trivia"></div>
+					</div>
+				</div>
+				<div class="rest-square">
+					<h2>Logement 1</h2>
+					<ul>
+						<li>Lysianne, Bruno</li>
+						<li>Cathy, François</li>
+						<li>Marie, Jonathan</li>
+					</ul>
+					<div class="rest-info">
+						<div class="rest-address">19 allée de la briqueterie<br>31380 Gragnague</div>
+						<div class="rest-trivia">du 22/09 16h00 au 25/09 11h00</div>
+					</div>
+				</div>
+				<div class="rest-square">
+					<h2>Logement 2</h2>
+					<ul>
+						<li>Sylvie, Pascal, Ludo</li>
+						<li>Georgette, Marcel</li>
+					</ul>
+					<div class="rest-info">
+						<div class="rest-address">30 Route de Baougnac<br>31590 Lavalette</div>
+						<div class="rest-trivia">du 22/09 au 26/09<br>Serviettes et draps à apporter</div>
+					</div>
+				</div>
+				<div class="rest-square">
+					<h2>Logement 3</h2>
+					<ul>
+						<li>Mathilde, Julien, Marion, Louis</li>
+					</ul>
+					<div class="rest-info">
+						<div class="rest-address">4 Chemin de Bordenoble<br>31180 Lapeyrouse-Fossat</div>
+						<div class="rest-trivia">du 22/09 15h00 au 24/09 10h00</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>`
+})
+
 Vue.component('dresscode', {
 	template: `<div id="dresscode">
 		<h1 class="info-title">Dress-code</h1>
@@ -200,6 +266,9 @@ new Vue({
 			route: 'home'
 		}
 	},
-	methods: {
+	computed: {
+		daysLeft() {
+			return Math.round((new Date('2023-09-23').getTime() - new Date().getTime())/(1000*60*60*24))
+		}
 	}
 })
