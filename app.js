@@ -14,7 +14,7 @@ Vue.component('tache', {
 Vue.component('home', {
 	template: `<div id="home">
 		<h1 class="info-title">Bienvenue !</h1>
-		<div class="info-content" style="margin: 0 4rem; text-align: center;"><p style="margin-top: 0">Nous avons la joie de vous convier à notre mariage convivial
+		<div class="info-content" style="text-align: center;"><p style="margin-top: 0">Nous avons la joie de vous convier à notre mariage convivial
 		aux couleures automnales dans une ambiance bohème.</p><p>
 		Déplacements à pieds, détente dans le jardin et petit restaurant agrémenteront la journée.</p>
 		<p>Vous trouverez ici toutes les informations concernant le mariage. N'hésitez pas à partager vos photos du mariage dans l'onglet photos.</p></div>
@@ -24,7 +24,7 @@ Vue.component('home', {
 Vue.component('galery', {
 	template: `<div id="galery">
 		<h1 class="info-title">Galerie</h1>
-		<div class="info-content" style="margin: 0 4rem; text-align: center;"><p style="margin-top: 0">
+		<div class="info-content" style="text-align: center;"><p style="margin-top: 0">
 			<div>Une fois récupérées, vous pourrez trouver ici toutes les photos du mariage.</div>
 			<img src="assets/bouquet.png">
 		</div>
@@ -91,7 +91,7 @@ Vue.component('dresscode', {
 	template: `<div id="dresscode">
 		<h1 class="info-title">Dress-code</h1>
 		<div class="info-content">
-			<div style="padding: 0 3rem; margin-bottom: 1rem;">Les mariés comptent sur vous pour trouver une tenue bohème dans les tons suivants :</div>
+			<div style="margin-bottom: 1rem;">Les mariés comptent sur vous pour trouver une tenue bohème dans les tons suivants :</div>
 			<div class="dresscode-colors">
 				<div v-for="color in colors" class="dresscode-color">
 					<tache :color="color.color"></tache>
@@ -140,52 +140,54 @@ Vue.component('places', {
 Vue.component('program', {
 	template: `<div id="program">
 		<h1 class="info-title">Programme</h1>
-		<ul class="info-content">
-			<li>
-				<img src="assets/mairie.png">
-				<div>
-					<h2>Cérémonie civile</h2>
-					<div>15h30</div>
-					<div>Mairie de Gragnague</div>
-				</div>
-			</li>
-			<li>
-				<img src="assets/photos.png">
-				<div>
-					<h2>Photos</h2>
-				</div>
-			</li>
-			<li>
-				<img src="assets/église.png">
-				<div>
-					<h2>Cérémonie religieuse</h2>
-					<div>16h30</div>
-					<div>Église de Gragnague</div>
-				</div>
-			</li>
-			<li>
-				<img src="assets/apéro.png">
-				<div>
-					<h2>Vin d'honneur</h2>
-					<div>Chez nous</div>
-				</div>
-			</li>
-			<li>
-				<img src="assets/couverts.png">
-				<div>
-					<h2>Dinner</h2>
-					<div>20h30</div>
-					<div>Restaurant "le petit café"</div>
-				</div>
-			</li>
-			<li>
-				<img src="assets/musique.png">
-				<div>
-					<h2>Soirée</h2>
-					<div>Chez nous</div>
-				</div>
-			</li>
-		</ul>
+		<div class="info-content">
+			<ul>
+				<li>
+					<img src="assets/mairie.png">
+					<div>
+						<h2>Cérémonie civile</h2>
+						<div>15h30</div>
+						<div>Mairie de Gragnague</div>
+					</div>
+				</li>
+				<li>
+					<img src="assets/photos.png">
+					<div>
+						<h2>Photos</h2>
+					</div>
+				</li>
+				<li>
+					<img src="assets/église.png">
+					<div>
+						<h2>Cérémonie religieuse</h2>
+						<div>16h30</div>
+						<div>Église de Gragnague</div>
+					</div>
+				</li>
+				<li>
+					<img src="assets/apéro.png">
+					<div>
+						<h2>Vin d'honneur</h2>
+						<div>Chez nous</div>
+					</div>
+				</li>
+				<li>
+					<img src="assets/couverts.png">
+					<div>
+						<h2>Dinner</h2>
+						<div>20h30</div>
+						<div>Restaurant "le petit café"</div>
+					</div>
+				</li>
+				<li>
+					<img src="assets/musique.png">
+					<div>
+						<h2>Soirée</h2>
+						<div>Chez nous</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>`
 })
 
