@@ -288,6 +288,7 @@ body, html {
 	gap: 1rem;
 	align-items: flex-start;
 	justify-content: center;
+	padding-bottom: 1rem;
 }
 .rest-square {
 	width: 300px;
@@ -298,7 +299,9 @@ body, html {
 .rest-square h2 {
 	margin-top: 0.5rem;
 }
-.rest-square ul {padding: 0;}
+.rest-square ul {
+	padding: 0;
+}
 .rest-square li {
 	list-style: none;
 	font-size: 1rem;
