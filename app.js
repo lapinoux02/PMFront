@@ -91,7 +91,7 @@ Vue.component('dresscode', {
 	template: `<div id="dresscode">
 		<h1 class="info-title">Dress-code</h1>
 		<div class="info-content">
-			<div style="padding: 0 1rem; margin-bottom: 1rem;">Les mariés comptent sur vous pour trouver une tenue bohème dans les tons suivants :</div>
+			<div style="padding: 0 3rem; margin-bottom: 1rem;">Les mariés comptent sur vous pour trouver une tenue bohème dans les tons suivants :</div>
 			<div class="dresscode-colors">
 				<div v-for="color in colors" class="dresscode-color">
 					<tache :color="color.color"></tache>

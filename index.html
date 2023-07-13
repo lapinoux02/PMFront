@@ -29,7 +29,7 @@
 			<div @click="route = 'galery'">Galerie</div>
 		</div>
 		<div class="content">
-			<div class="intro">
+			<div class="intro" :class="{invisible: route !== 'home'}">
 				<h1>Paul & Marjolaine</h1>
 				<img src="assets/couple.png" width="250px">
 				<div style="margin-top: 1em;">23 Septembre 2023</div>
