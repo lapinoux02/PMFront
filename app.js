@@ -194,7 +194,7 @@ Vue.component('program', {
 Vue.component('photos', {
 	template: `<div id="photos">
 		<h1 class="info-title">Photos</h1>
-		<div class="info-content" style="padding: 0 3rem; display: flex; flex-direction: column; gap: 1rem;">
+		<div class="info-content" style="display: flex; flex-direction: column; gap: 1rem;">
 			<div @click="openShare" class="share">
 				<span>Vous pouvez nous partager vos photos du mariage en cliquant sur le bouton suivant :</span>
 				<span class="material-symbols-outlined share-button">add_a_photo</span>
