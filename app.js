@@ -26,7 +26,7 @@ Vue.component('galery', {
 		<h1 class="info-title">Galerie</h1>
 		<div class="info-content" style="text-align: center;"><p style="margin-top: 0">
 			<div>Une fois récupérées, vous pourrez trouver ici toutes les photos du mariage.</div>
-			<img src="assets/bouquet.png">
+			<img src="assets/bouquet.png" style="max-width: 100%;">
 		</div>
 	</div>`
 })
