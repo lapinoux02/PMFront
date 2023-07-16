@@ -37,6 +37,10 @@ h2 {
 	margin: 0;
 }
 
+li {
+	list-style: none;
+}
+
 :root {
 	--header-height: 150px;
 	--color1: #dd7559;
@@ -205,6 +209,9 @@ body, html {
 	justify-content: flex-end;
 	gap: 1rem;
 	padding-left: 2rem;
+	@media screen and (max-width: 850px) {
+		padding-left: 0;
+	}
 }
 
 
@@ -215,7 +222,6 @@ body, html {
 	padding: 0;
 }
 #program ul li {
-	list-style: none;
 	display: flex;
 	align-items: center;
 	gap: 1em;
@@ -234,7 +240,6 @@ body, html {
 
 /* lieux */
 #places li {
-	list-style: none;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 10px;
@@ -325,4 +330,15 @@ body, html {
     margin-top: 0.5em;
     font-weight: bold;
     color: var(--color1);
+}
+
+.file-name {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	font-size: 1rem;
+}
+
+#weekend li {
+	list-style-image: url('assets/fleurs\ 8.png');
 }

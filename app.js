@@ -126,12 +126,34 @@ Vue.component('places', {
 	template: `<div id="places">
 		<h1 class="info-title">Lieux</h1>
 		<div class="info-content">
-			<img src="assets/plan gragnague.png" width="100%">
+			<img src="assets/plan.png" width="100%">
 			<ul>
 				<li><span class="places-title"><img src="assets/home.png">Chez nous</span><span class="tab">12 rue de la tour, 31380 Gragnague</span></li>
 				<li><span class="places-title"><img src="assets/university.png">Mairie de Gragnague</span><span class="tab">15 Pl. Bellegarde, 31380 Gragnague</span></li>
 				<li><span class="places-title"><img src="assets/big-church.png">Église de Gragnague</span><span class="tab">19 Pl. Bellegarde, 31380 Gragnague</span></li>
 				<li><span class="places-title"><img src="assets/restaurant.png">Restaurant "le petit café"</span><span class="tab">14 Av. du champ de Foire, 31380 Gragnague</span></li>
+			</ul>
+		</div>
+	</div>`
+})
+
+Vue.component('weekend', {
+	template: `<div id="weekend">
+		<h1 class="info-title">Week-end</h1>
+		<div class="info-content">
+			<h2>Vendredi</h2>
+			<ul>
+				<li>Derniers préparatifs: décoration restaurant et église, ...</li>
+				<li>Soirée pizzas</li>
+			</ul>
+			<h2>Samedi</h2>
+			<ul>
+				<li>Repas du midi à la bonne franquette</li>
+				<li>Voir "Programme" pour la suite</li>
+			</ul>
+			<h2>Dimanche</h2>
+			<ul>
+				<li>Brunch à partir de 11h00</li>
 			</ul>
 		</div>
 	</div>`
@@ -203,7 +225,7 @@ Vue.component('photos', {
 			<div v-else-if="files.length" style="font-size: 1rem;">Upload terminé <span v-if=errors style="font-size: 1rem;">({{errors}} fichiers en erreur)</span>, merci <span class="material-symbols-outlined" style="color: red">favorite</span></div>
 			<div class="file-list">
 				<div v-for="file in files" class="file">
-					<span style="font-size: 1rem;">{{file.name}}</span>
+					<span class="file-name">{{file.name}}</span>
 					<span class="material-symbols-outlined" :style="{color: color(file.status), display: 'flex', fontSize: '1rem'}">{{icon(file.status)}}</span>
 				</div>
 			</div>
@@ -211,7 +233,7 @@ Vue.component('photos', {
 	</div>`,
 	data() {
 		return {
-			files: [],
+			files: [{name: 'qmslkdfsqlkdjfslqkdkfslqdkflsqdkjf.png', status: 0}],
 			uploads: 0
 		}
 	},
