@@ -15,7 +15,7 @@ Vue.component('home', {
 	template: `<div id="home">
 		<h1 class="info-title">Bienvenue !</h1>
 		<div class="info-content" style="text-align: center;"><p style="margin-top: 0">Nous avons la joie de vous convier à notre mariage convivial
-		aux couleures automnales dans une ambiance bohème.</p><p>
+		aux couleurs automnales dans une ambiance bohème.</p><p>
 		Déplacements à pieds, détente dans le jardin et petit restaurant agrémenteront la journée.</p>
 		<p>Vous trouverez ici toutes les informations concernant le mariage. N'hésitez pas à partager vos photos du mariage dans l'onglet photos.</p></div>
 	</div>`
@@ -196,7 +196,7 @@ Vue.component('program', {
 				<li>
 					<img src="assets/couverts.png">
 					<div>
-						<h2>Dinner</h2>
+						<h2>Dîner</h2>
 						<div>20h30</div>
 						<div>Restaurant "le petit café"</div>
 					</div>
