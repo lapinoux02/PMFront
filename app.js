@@ -233,7 +233,7 @@ Vue.component('photos', {
 	</div>`,
 	data() {
 		return {
-			files: [{name: 'qmslkdfsqlkdjfslqkdkfslqdkflsqdkjf.png', status: 0}],
+			files: [],
 			uploads: 0
 		}
 	},
