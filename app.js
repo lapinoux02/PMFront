@@ -292,7 +292,7 @@ new Vue({
 	},
 	computed: {
 		daysLeft() {
-			return Math.round((new Date('2023-09-23').getTime() - new Date().getTime())/(1000*60*60*24))
+			return Math.round((new Date('2023-09-24').getTime() - new Date().getTime())/(1000*60*60*24))
 		}
 	}
 })
